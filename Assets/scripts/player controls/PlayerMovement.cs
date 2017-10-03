@@ -6,11 +6,14 @@ public class PlayerMovement : MonoBehaviour {
     float yPos, xPos;
     [SerializeField]
     float speed;
-	// Use this for initialization
-	void Start () {
+    float momentumX, momentumY;
+    // Use this for initialization
+    void Start () {
         yPos = gameObject.transform.position.y;
         xPos = gameObject.transform.position.x;
-	}
+        momentumX = 0;
+        momentumY = 0;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -23,5 +26,11 @@ public class PlayerMovement : MonoBehaviour {
         if (yPos < boundsMin.y) yPos = boundsMin.y;
         if (xPos < boundsMin.x) xPos = boundsMin.x;
         gameObject.transform.position = new Vector2(xPos, yPos);
+    }
+    public Vector2 SendMomentum()
+    {
+        momentumY = speed * Input.GetAxis("Vertical");
+        momentumX = speed * Input.GetAxis("Horizontal");
+        return new Vector2(momentumX, momentumY);
     }
 }

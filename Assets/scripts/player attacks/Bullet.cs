@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         yVal = gameObject.transform.position.y;
-	}
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
