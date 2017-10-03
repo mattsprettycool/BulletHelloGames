@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour {
         if (xPos > boundsMax.x) xPos = boundsMax.x;
         if (yPos < boundsMin.y) yPos = boundsMin.y;
         if (xPos < boundsMin.x) xPos = boundsMin.x;
+        //DEBUG PURPOSES ONLY
+            if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
         gameObject.transform.position = new Vector2(xPos, yPos);
     }
     public Vector2 SendMomentum()
