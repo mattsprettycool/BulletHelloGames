@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour {
     [SerializeField]
     GameObject bullet;
+    [SerializeField]
+    int fireRate;
+    int canFire = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,6 +15,13 @@ public class PlayerShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (Input.GetAxis("Fire1") != 0) Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
+        if (canFire == 0)
+        {
+            if (Input.GetAxis("Fire1") != 0)
+                Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
+            canFire = fireRate;
+        }
+        else
+            canFire--;
 	}
 }
