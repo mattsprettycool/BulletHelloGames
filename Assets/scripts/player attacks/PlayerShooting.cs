@@ -11,7 +11,7 @@ public class PlayerShooting : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetAxis("Fire1") != 0) Instantiate(bullet, gameObject.transform);
+	void FixedUpdate () {
+        if (Input.GetAxis("Fire1") != 0) Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
 	}
 }
