@@ -15,4 +15,12 @@ public class HealthBar : MonoBehaviour {
 	void Update () {
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(gameObject.GetComponent<RectTransform>().rect.width, rectHeight * health);
 	}
+    public float GetHealth()
+    {
+        return health;
+    }
+    public void DamageHealth(float damageTaken)
+    {
+        health -= damageTaken;
+    }
 }
