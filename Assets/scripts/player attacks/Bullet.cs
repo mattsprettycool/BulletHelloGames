@@ -14,6 +14,8 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         yVal += speed;
+        if(Input.GetAxis("Vertical")>0)
+            yVal += speed * Input.GetAxis("Vertical");
         gameObject.transform.position = new Vector2(gameObject.transform.position.x, yVal);
         if (yVal > Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0)).y) Destroy(gameObject);
 	}
