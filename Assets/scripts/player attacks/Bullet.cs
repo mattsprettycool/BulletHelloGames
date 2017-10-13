@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour {
     float yVal;
     [SerializeField]
     float speed;
+    [SerializeField]
+    float damage;
 	// Use this for initialization
 	void Start () {
         yVal = gameObject.transform.position.y;
@@ -17,4 +19,16 @@ public class Bullet : MonoBehaviour {
         gameObject.transform.position = new Vector2(gameObject.transform.position.x, yVal);
         if (yVal > Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0)).y) Destroy(gameObject);
 	}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "enemy")
+        {
+            collision.collider.gameObject.GetComponent<BasicEnemy>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
+    public float SendDamage()
+    {
+        return damage;
+    }
 }
