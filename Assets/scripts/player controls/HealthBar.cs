@@ -21,6 +21,6 @@ public class HealthBar : MonoBehaviour {
     }
     public void DamageHealth(float damageTaken)
     {
-        health -= damageTaken;
+        health = ((health * 100) - damageTaken) / 100;
     }
 }
