@@ -15,6 +15,9 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - Enemy
+  - Invincibility
   - 
   - 
   - 
@@ -35,10 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - BackGround
   m_SortingLayers:
   - name: Default
     uniqueID: 0
