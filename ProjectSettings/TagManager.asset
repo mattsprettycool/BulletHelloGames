@@ -6,6 +6,8 @@ TagManager:
   tags:
   - playerBullet
   - enemy
+  - Health
+  - gun
   layers:
   - Default
   - TransparentFX
