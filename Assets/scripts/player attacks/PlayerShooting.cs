@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Author: Matt Braden
 public class PlayerShooting : MonoBehaviour {
     [SerializeField]
     GameObject bullet;
@@ -15,6 +15,7 @@ public class PlayerShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        //instantiates bullet prefabs on a delay
         if (canFire == 0)
         {
             if (Input.GetAxis("Fire1") != 0)

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Author: Lucas
 public class EnemyShooting : MonoBehaviour {
 
 	public GameObject bulletPrefrab;
