@@ -261,6 +261,7 @@ MonoBehaviour:
   pathOrder: 4
   speedToPath: 1
   killOnGettingToPath: 1
+  waitTime: 0
 --- !u!114 &114754084347751080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,6 +276,7 @@ MonoBehaviour:
   pathOrder: 2
   speedToPath: 1
   killOnGettingToPath: 0
+  waitTime: 0
 --- !u!114 &114903169012832528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +291,7 @@ MonoBehaviour:
   pathOrder: 1
   speedToPath: 1
   killOnGettingToPath: 0
+  waitTime: 2.5
 --- !u!114 &114986085553500972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,6 +306,7 @@ MonoBehaviour:
   pathOrder: 3
   speedToPath: 1
   killOnGettingToPath: 0
+  waitTime: 0
 --- !u!212 &212410644052697856
 SpriteRenderer:
   m_ObjectHideFlags: 1

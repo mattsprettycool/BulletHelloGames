@@ -13,6 +13,9 @@ public class PathLocation : MonoBehaviour {
     //if true, the enemy dies upon reaching the path
     [SerializeField]
     bool killOnGettingToPath = false;
+    //the time that the enemy stays on the point
+    [SerializeField, Range(0f, 1000f)]
+    float waitTime;
     //gets the point of where the path is
     public Vector2 GetPoint()
     {
@@ -32,5 +35,10 @@ public class PathLocation : MonoBehaviour {
     public bool IsDeadOnPath()
     {
         return killOnGettingToPath;
+    }
+    //gets the wait time
+    public float GetWaitTime()
+    {
+        return waitTime;
     }
 }

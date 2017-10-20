@@ -15,6 +15,7 @@ public class PathFinder : MonoBehaviour {
     GameObject enemyToEffect;
     //the starting location of the enemy
     Vector2 startLocation;
+    bool continueRunning = true;
     // Use this for initialization
     void Start () {
         //finds the enemy object
@@ -45,7 +46,7 @@ public class PathFinder : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         //checks if the path order is in the array's size
-        if (curSpot < arrSize+1)
+        if (curSpot < arrSize+1 && continueRunning)
         {
             //checks if the enemy's x is greater than or equal to the path to go to, because it needs to know to either add or subtract the x value
             //as these two nests are nearly identical, I am only going to comment this one
@@ -54,6 +55,8 @@ public class PathFinder : MonoBehaviour {
                 //checks if the enemy is on the point of the path
                 if (new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y) == ChoosePoint(curSpot).GetPoint())
                 {
+                    //The time that the enemy will stay in place before doing anything else related to movement.
+                    StartCoroutine((WaitForTime(ChoosePoint(curSpot).GetWaitTime())));
                     //if the kill boolean is true, the enemy is killed.
                     if (ChoosePoint(curSpot).IsDeadOnPath())
                         enemyToEffect.GetComponent<BasicEnemy>().Kill();
@@ -83,6 +86,7 @@ public class PathFinder : MonoBehaviour {
             {
                 if (new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y) == ChoosePoint(curSpot).GetPoint())
                 {
+                    StartCoroutine((WaitForTime(ChoosePoint(curSpot).GetWaitTime())));
                     if (ChoosePoint(curSpot).IsDeadOnPath())
                         enemyToEffect.GetComponent<BasicEnemy>().Kill();
                     curSpot++;
@@ -110,5 +114,12 @@ public class PathFinder : MonoBehaviour {
                 return obj;
         }
         return null;
+    }
+    //waits for timeToWait seconds
+    IEnumerator WaitForTime(float timeToWait)
+    {
+        continueRunning = false;
+        yield return new WaitForSeconds(timeToWait);
+        continueRunning = true;
     }
 }
