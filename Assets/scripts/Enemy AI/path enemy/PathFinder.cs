@@ -24,7 +24,7 @@ public class PathFinder : MonoBehaviour {
             if (obj.gameObject.tag.Equals("enemy"))
                 enemyToEffect = obj.gameObject;
         }
-        //sets the start location
+        //sets the start location of the enemy
         startLocation = new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y);
         //sets the array size based on the ammount of path locations
         foreach (PathLocation obj in gameObject.GetComponentsInChildren<PathLocation>())
