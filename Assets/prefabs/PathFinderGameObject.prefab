@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 212410644052697856}
   - component: {fileID: 114450920220310572}
   - component: {fileID: 60297161522321000}
+  - component: {fileID: 114656773660467774}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: enemy
@@ -247,6 +248,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0.1
   damage: 10
+--- !u!114 &114656773660467774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418885806746482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPattern: 0
+  basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
+    type: 2}
+  slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
 --- !u!114 &114689001705051782
 MonoBehaviour:
   m_ObjectHideFlags: 1

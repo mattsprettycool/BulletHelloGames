@@ -504,6 +504,7 @@ GameObject:
   - component: {fileID: 1064517221}
   - component: {fileID: 1064517220}
   - component: {fileID: 1064517219}
+  - component: {fileID: 1064517222}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: enemy
@@ -613,6 +614,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1064517222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064517217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPattern: 0
+  basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
+    type: 2}
+  slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
 --- !u!1 &1375752936
 GameObject:
   m_ObjectHideFlags: 0
