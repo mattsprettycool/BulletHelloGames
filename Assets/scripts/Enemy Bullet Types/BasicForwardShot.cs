@@ -20,4 +20,12 @@ public class BasicForwardShot : MonoBehaviour {
         gameObject.transform.position = new Vector2(gameObject.transform.position.x, yVal);
         if (yVal < Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y) Destroy(gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag.Equals("Player"))
+        {
+            collision.collider.gameObject.GetComponent<PlayerHealth>().DamageHealth(damage);
+            Destroy(gameObject);
+        }
+    }
 }
