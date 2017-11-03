@@ -39,7 +39,8 @@ public class PlayerMovement : MonoBehaviour {
         if (yPos < boundsMin.y) yPos = boundsMin.y;
         if (xPos < boundsMin.x) xPos = boundsMin.x;
         //moves the player to the position of the new points
-        gameObject.transform.position = new Vector2(xPos, yPos);
+        Vector2 pos = new Vector2(xPos, yPos);
+        gameObject.transform.position = new Vector2(Mathf.Round(pos.x),Mathf.Round(pos.y));
     }
     //sends the player's momentum
     public Vector2 SendMomentum()

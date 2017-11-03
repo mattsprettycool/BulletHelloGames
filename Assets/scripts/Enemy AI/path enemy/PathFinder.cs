@@ -76,7 +76,7 @@ public class PathFinder : MonoBehaviour {
                     //moves the enemy to the new location
                     enemyToEffect.transform.position = new Vector3(pointToGoTo.x, pointToGoTo.y, enemyToEffect.transform.position.z);
                     //moves the linespot based on the speed value to get the next point to plug in
-                    lineSpot -= .1f * ChoosePoint(curSpot).GetSpeed();
+                    lineSpot -= .1f * ChoosePoint(curSpot).GetSpeed()*50;
                     //if the enemy overshot the path, this sets the enemy's position to the path. This isn't noticeable because the difference is usually in the hundereths place.
                     if(enemyToEffect.transform.position.x < ChoosePoint(curSpot).GetPoint().x)
                         enemyToEffect.transform.position = new Vector3(ChoosePoint(curSpot).GetPoint().x, ChoosePoint(curSpot).GetPoint().y, enemyToEffect.transform.position.z);
@@ -98,7 +98,7 @@ public class PathFinder : MonoBehaviour {
                     float yIntercept = ChoosePoint(curSpot).GetPoint().y - (slope * ChoosePoint(curSpot).GetPoint().x);
                     Vector2 pointToGoTo = new Vector2(lineSpot, (slope * lineSpot) + yIntercept);
                     enemyToEffect.transform.position = new Vector3(pointToGoTo.x, pointToGoTo.y, enemyToEffect.transform.position.z);
-                    lineSpot += .1f * ChoosePoint(curSpot).GetSpeed();
+                    lineSpot += .1f * ChoosePoint(curSpot).GetSpeed()*50;
                     if (enemyToEffect.transform.position.x > ChoosePoint(curSpot).GetPoint().x)
                         enemyToEffect.transform.position = new Vector3(ChoosePoint(curSpot).GetPoint().x, ChoosePoint(curSpot).GetPoint().y, enemyToEffect.transform.position.z);
                 }
