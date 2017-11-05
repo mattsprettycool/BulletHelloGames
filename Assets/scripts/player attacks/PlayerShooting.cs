@@ -19,7 +19,7 @@ public class PlayerShooting : MonoBehaviour {
         if (canFire == 0)
         {
             if (Input.GetAxis("Fire1") != 0)
-                Instantiate(bullet, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+.25f, gameObject.transform.position.z), gameObject.transform.rotation);
+                Instantiate(bullet, new Vector3(gameObject.transform.position.x-5, gameObject.transform.position.y+30f, gameObject.transform.position.z), gameObject.transform.rotation);
             canFire = fireRate;
         }
         else
