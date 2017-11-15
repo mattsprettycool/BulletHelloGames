@@ -12,13 +12,15 @@ public class EnemyGun : MonoBehaviour {
     BulletType attackPattern = new BulletType();
     [SerializeField]
     GameObject basicForwardShot, slowLargeShot;
+    bool hasPathFinder;
 	// Use this for initialization
 	void Start () {
-		
+        hasPathFinder = (!gameObject.GetComponentInParent<PathFinder>().Equals(null));
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if((!hasPathFinder)||(hasPathFinder&& gameObject.GetComponentInParent<PathFinder>().IsFiring()))
         if (continueRunning)
         {
             if (attackPattern == BulletType.BasicForwardShot)

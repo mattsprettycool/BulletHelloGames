@@ -16,6 +16,7 @@ public class PathFinder : MonoBehaviour {
     //the starting location of the enemy
     Vector2 startLocation;
     bool continueRunning = true;
+    bool fireOnPath = false;
     // Use this for initialization
     void Start () {
         //finds the enemy object
@@ -41,10 +42,12 @@ public class PathFinder : MonoBehaviour {
         }
         //sets linespot to the starting location
         lineSpot = enemyToEffect.transform.position.x;
+        fireOnPath = ChoosePoint(curSpot).IsFiringOnPath();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        fireOnPath = ChoosePoint(curSpot).IsFiringOnPath();
         //checks if the path order is in the array's size
         if (curSpot < arrSize+1 && continueRunning)
         {
@@ -121,5 +124,9 @@ public class PathFinder : MonoBehaviour {
         continueRunning = false;
         yield return new WaitForSeconds(timeToWait);
         continueRunning = true;
+    }
+    public bool IsFiring()
+    {
+        return fireOnPath;
     }
 }
