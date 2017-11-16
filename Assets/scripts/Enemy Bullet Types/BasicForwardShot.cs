@@ -15,9 +15,8 @@ public class BasicForwardShot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        //increases the yvalue and then kills the bullet if it's at the top of the screen
-        yVal -= speed;
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,Mathf.Round(yVal));
+        //gameObject.transform.position = new Vector2(gameObject.transform.position.x,Mathf.Round(yVal));
+        gameObject.transform.Translate(new Vector3(0, Mathf.Round(speed), 0));
         if (yVal < Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y) Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
