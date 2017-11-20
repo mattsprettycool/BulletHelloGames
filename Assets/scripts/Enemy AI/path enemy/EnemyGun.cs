@@ -6,12 +6,12 @@ public class EnemyGun : MonoBehaviour {
     bool continueRunning = true;
     enum BulletType
     {
-        BasicForwardShot, SlowLargeShot
+        BasicForwardShot, SlowLargeShot, BulletExplosion
     }
     [SerializeField]
     BulletType attackPattern = new BulletType();
     [SerializeField]
-    GameObject basicForwardShot, slowLargeShot;
+    GameObject basicForwardShot, slowLargeShot, bulletExplosion;
     bool hasPathFinder;
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,11 @@ public class EnemyGun : MonoBehaviour {
             {
                 StartCoroutine((WaitForTime(.5f)));
                 Shoot(slowLargeShot);
-            }
+            }else if(attackPattern == BulletType.BulletExplosion)
+                {
+                    StartCoroutine((WaitForTime(2f)));
+                    Shoot(bulletExplosion);
+                }
         }
 	}
     void Shoot(GameObject g)

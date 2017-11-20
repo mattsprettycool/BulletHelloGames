@@ -264,6 +264,8 @@ MonoBehaviour:
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
     type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
+    type: 2}
 --- !u!114 &114689001705051782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,6 +280,7 @@ MonoBehaviour:
   pathOrder: 4
   speedToPath: 1
   killOnGettingToPath: 1
+  fireWhileGettingToPath: 0
   waitTime: 0
 --- !u!114 &114754084347751080
 MonoBehaviour:
@@ -293,6 +296,7 @@ MonoBehaviour:
   pathOrder: 2
   speedToPath: 1
   killOnGettingToPath: 0
+  fireWhileGettingToPath: 0
   waitTime: 0
 --- !u!114 &114903169012832528
 MonoBehaviour:
@@ -308,6 +312,7 @@ MonoBehaviour:
   pathOrder: 1
   speedToPath: 1
   killOnGettingToPath: 0
+  fireWhileGettingToPath: 0
   waitTime: 2.5
 --- !u!114 &114986085553500972
 MonoBehaviour:
@@ -323,6 +328,7 @@ MonoBehaviour:
   pathOrder: 3
   speedToPath: 1
   killOnGettingToPath: 0
+  fireWhileGettingToPath: 0
   waitTime: 0
 --- !u!212 &212410644052697856
 SpriteRenderer:

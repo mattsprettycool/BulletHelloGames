@@ -844,10 +844,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!60 &653861589
 PolygonCollider2D:
@@ -1222,10 +1224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!60 &714576818
 PolygonCollider2D:
@@ -1893,10 +1897,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!60 &1043051924
 PolygonCollider2D:
@@ -2169,10 +2175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!1 &1087665584
 GameObject:
@@ -2219,10 +2227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!60 &1087665587
 PolygonCollider2D:
@@ -2357,10 +2367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!60 &1153433956
 PolygonCollider2D:
@@ -2785,10 +2797,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!60 &1347699965
 PolygonCollider2D:
@@ -2923,10 +2937,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7512490e0207c854d90975520d9de005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: 0
+  attackPattern: 2
   basicForwardShot: {fileID: 1010788634984916, guid: f18e263c25de51c419499539f09f5fb4,
     type: 2}
   slowLargeShot: {fileID: 1447096961351670, guid: fbd0f74d246a5b746948e4efee5d706f,
+    type: 2}
+  bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
 --- !u!60 &1351415336
 PolygonCollider2D:
