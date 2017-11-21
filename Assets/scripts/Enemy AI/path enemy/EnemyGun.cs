@@ -33,7 +33,7 @@ public class EnemyGun : MonoBehaviour {
                 Shoot(slowLargeShot);
             }else if(attackPattern == BulletType.BulletExplosion)
                 {
-                    StartCoroutine((WaitForTime(2f)));
+                    StartCoroutine((WaitForTime(1f)));
                     Shoot(bulletExplosion);
                 }
         }
