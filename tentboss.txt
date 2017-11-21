@@ -1,0 +1,5 @@
+3 stage boss fight
+1st stage = survival stage with tentacle walls and mini-squid enemies falling down, projectiles dont pierce the tentacles basically causing this to be a completley survival phase time = ~30-45 sec
+2nd stage = Tentacle walls disappear and boss w/ hitbox appears as a target he shoots a small to moderate amount of projectiles and tentacles hover at side/ aim / then quickly strike area hovered still squid doods
+3rd stage = Boss gets angry shoots high amount of proectiles and tentacles linger after a strike and have an independent health bar. Stops projectiles and squid doods remain. Also suicide squids appear/ when they get close they blink red and explod ein a big aoe after ~1 sec
+-David
