@@ -12,7 +12,7 @@ public class TentacleManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(speed>-10)
+        if(speed>-9)
         speed -= Time.deltaTime;
 	}
 

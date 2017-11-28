@@ -8,9 +8,7 @@ public class Stage1Tentacles : MonoBehaviour {
     [SerializeField]
     bool isOnLeft;
     Vector3 defaultPos;
-    [SerializeField]
-    GameObject oppositeTentacle;
-    bool justRespawned = false;
+    bool justRespawned = true;
 	// Use this for initialization
 	void Start () {
         if (isOnLeft)
@@ -32,14 +30,23 @@ public class Stage1Tentacles : MonoBehaviour {
 	void Update () {
         speed = tm.GetSpeed();
         gameObject.transform.Translate(new Vector3(0, speed, 0));
-        if (gameObject.transform.position.y <= -defaultPos.y)
+        if (gameObject.transform.position.y <= -Camera.main.pixelHeight)
         {
-            gameObject.transform.localScale = new Vector3(Camera.main.pixelWidth + Random.Range(0, 100), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, oppositeTentacle.GetComponent<Stage1Tentacles>().GetDefPosY(), gameObject.transform.position.z);
+            gameObject.transform.localScale = new Vector3(Camera.main.pixelWidth + Random.Range(0, 200), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, Camera.main.pixelHeight, gameObject.transform.position.z);
+            justRespawned = true;
         }
 	}
     public float GetDefPosY()
     {
         return defaultPos.y;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag.Equals("Player") && justRespawned)
+        {
+            GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>().DamageHealth(2f);
+            justRespawned = false;
+        }
     }
 }
