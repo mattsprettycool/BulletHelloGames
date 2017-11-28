@@ -9,6 +9,7 @@ TagManager:
   - Health
   - gun
   - EnemyBullet
+  - TentacleManager
   layers:
   - Default
   - TransparentFX
