@@ -742,6 +742,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!60 &653861589
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1122,6 +1123,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!60 &714576818
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1794,6 +1796,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!60 &1043051924
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2072,6 +2075,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!1 &1087665584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2128,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!60 &1087665587
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2264,6 +2269,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!60 &1153433956
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2694,6 +2700,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!60 &1347699965
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2834,6 +2841,7 @@ MonoBehaviour:
     type: 2}
   bulletExplosion: {fileID: 1402845598106540, guid: 1e5b2dcd1bf303d428e549e1cd6cbe05,
     type: 2}
+  streamShot: {fileID: 0}
 --- !u!60 &1351415336
 PolygonCollider2D:
   m_ObjectHideFlags: 0

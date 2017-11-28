@@ -13,6 +13,8 @@ public class PathLocation : MonoBehaviour {
     //if true, the enemy dies upon reaching the path; if true, the enemy fires his gun while getting to the path
     [SerializeField]
     bool killOnGettingToPath = false, fireWhileGettingToPath;
+    [SerializeField]
+    bool looppath = false; 
     //the time that the enemy stays on the point
     [SerializeField, Range(0f, 1000f)]
     float waitTime;
@@ -35,6 +37,10 @@ public class PathLocation : MonoBehaviour {
     public bool IsDeadOnPath()
     {
         return killOnGettingToPath;
+    }
+    public bool LoopPath()
+    {
+        return looppath;
     }
     //gets the wait time
     public float GetWaitTime()

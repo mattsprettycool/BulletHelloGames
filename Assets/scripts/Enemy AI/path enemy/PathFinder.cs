@@ -60,11 +60,15 @@ public class PathFinder : MonoBehaviour {
                 {
                     //The time that the enemy will stay in place before doing anything else related to movement.
                     StartCoroutine((WaitForTime(ChoosePoint(curSpot).GetWaitTime())));
+                    
                     //if the kill boolean is true, the enemy is killed.
                     if (ChoosePoint(curSpot).IsDeadOnPath())
                         enemyToEffect.GetComponent<BasicEnemy>().Kill();
                     //iterates the current spot
                     curSpot++;
+                    //if loop boolean is true, the enemy will loop path
+                    if (ChoosePoint(curSpot).LoopPath())
+                        curSpot = 1;
                     //changes the start location to the new one
                     startLocation = new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y);
                 }//if the enemy is to the left of the path, it runs this code
