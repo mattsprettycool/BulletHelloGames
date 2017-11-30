@@ -30,7 +30,7 @@ public class Stage1Tentacles : MonoBehaviour {
 	void Update () {
         speed = tm.GetSpeed();
         gameObject.transform.Translate(new Vector3(0, speed, 0));
-        if (gameObject.transform.position.y <= -Camera.main.pixelHeight)
+        if (gameObject.transform.position.y <= -Camera.main.pixelHeight/2)
         {
             gameObject.transform.localScale = new Vector3(Camera.main.pixelWidth + Random.Range(0, 200), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, Camera.main.pixelHeight, gameObject.transform.position.z);

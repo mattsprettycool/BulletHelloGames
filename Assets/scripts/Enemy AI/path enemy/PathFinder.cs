@@ -64,16 +64,18 @@ public class PathFinder : MonoBehaviour {
                     //if the kill boolean is true, the enemy is killed.
                     if (ChoosePoint(curSpot).IsDeadOnPath())
                         enemyToEffect.GetComponent<BasicEnemy>().Kill();
-                    //iterates the current spot
-                    curSpot++;
-                    //if loop boolean is true, the enemy will loop path
+                    //if loop boolean is true, the enemy will loop path else iterates the current spot
                     if (ChoosePoint(curSpot).LoopPath())
-                        curSpot = 1;
+                    {
+                        curSpot = ChoosePoint(curSpot).GetPathToLoopTo();
+                    }else
+                        curSpot++;
                     //changes the start location to the new one
                     startLocation = new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y);
                 }//if the enemy is to the left of the path, it runs this code
                 else if (enemyToEffect.transform.position.x > ChoosePoint(curSpot).GetPoint().x)
                 {
+                    //Debug.Log("Curspot: "+curSpot+" enemy's x: "+enemyToEffect.transform.position.x + " enemies y: " + enemyToEffect.transform.position.y+" point x: "+ChoosePoint(curSpot).GetPoint().x+" point y: "+ ChoosePoint(curSpot).GetPoint().y);
                     //gets the slope of the line that is from the enemy to the point. This whole code utilizes slope intercept form to move the enemy
                     float slope = (ChoosePoint(curSpot).GetPoint().y - enemyToEffect.transform.position.y) / (ChoosePoint(curSpot).GetPoint().x - enemyToEffect.transform.position.x);
                     //finds the y intercept by plugging in the path point. This is used to finish off the slope intercept form equation
@@ -85,7 +87,7 @@ public class PathFinder : MonoBehaviour {
                     //moves the linespot based on the speed value to get the next point to plug in
                     lineSpot -= .1f * ChoosePoint(curSpot).GetSpeed()*50;
                     //if the enemy overshot the path, this sets the enemy's position to the path. This isn't noticeable because the difference is usually in the hundereths place.
-                    if(enemyToEffect.transform.position.x < ChoosePoint(curSpot).GetPoint().x)
+                    if(enemyToEffect.transform.position.x <= ChoosePoint(curSpot).GetPoint().x)
                         enemyToEffect.transform.position = new Vector3(ChoosePoint(curSpot).GetPoint().x, ChoosePoint(curSpot).GetPoint().y, enemyToEffect.transform.position.z);
                 }
                 //again, as this code mirrors the code above, I won't be going over it. It is just for when the enemy is on the left of the point rather than the right
@@ -96,17 +98,24 @@ public class PathFinder : MonoBehaviour {
                     StartCoroutine((WaitForTime(ChoosePoint(curSpot).GetWaitTime())));
                     if (ChoosePoint(curSpot).IsDeadOnPath())
                         enemyToEffect.GetComponent<BasicEnemy>().Kill();
-                    curSpot++;
+                    if (ChoosePoint(curSpot).LoopPath())
+                    {
+                        curSpot = ChoosePoint(curSpot).GetPathToLoopTo();
+                    }
+                    else
+                        curSpot++;
                     startLocation = new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y);
                 }
                 else if (enemyToEffect.transform.position.x < ChoosePoint(curSpot).GetPoint().x)
                 {
+                    //Debug.Log("Curspot: " + curSpot + " enemy's x: " + enemyToEffect.transform.position.x + " enemies y: " + enemyToEffect.transform.position.y + " point x: " + ChoosePoint(curSpot).GetPoint().x + " point y: " + ChoosePoint(curSpot).GetPoint().y);
                     float slope = (ChoosePoint(curSpot).GetPoint().y - enemyToEffect.transform.position.y) / (ChoosePoint(curSpot).GetPoint().x - enemyToEffect.transform.position.x);
                     float yIntercept = ChoosePoint(curSpot).GetPoint().y - (slope * ChoosePoint(curSpot).GetPoint().x);
+                    //Debug.Log(slope +"*"+ lineSpot +"+"+ yIntercept);
                     Vector2 pointToGoTo = new Vector2(lineSpot, (slope * lineSpot) + yIntercept);
                     enemyToEffect.transform.position = new Vector3(pointToGoTo.x, pointToGoTo.y, enemyToEffect.transform.position.z);
                     lineSpot += .1f * ChoosePoint(curSpot).GetSpeed()*50;
-                    if (enemyToEffect.transform.position.x > ChoosePoint(curSpot).GetPoint().x)
+                    if (enemyToEffect.transform.position.x >= ChoosePoint(curSpot).GetPoint().x)
                         enemyToEffect.transform.position = new Vector3(ChoosePoint(curSpot).GetPoint().x, ChoosePoint(curSpot).GetPoint().y, enemyToEffect.transform.position.z);
                 }
             }
