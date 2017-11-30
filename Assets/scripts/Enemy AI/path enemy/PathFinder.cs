@@ -51,9 +51,36 @@ public class PathFinder : MonoBehaviour {
         //checks if the path order is in the array's size
         if (curSpot < arrSize+1 && continueRunning)
         {
+            if (ChoosePoint(curSpot).GetGoStraight())
+            {
+                if (enemyToEffect.transform.position.y == ChoosePoint(curSpot).GetPoint().y)
+                {
+                    StartCoroutine((WaitForTime(ChoosePoint(curSpot).GetWaitTime())));
+                    if (ChoosePoint(curSpot).IsDeadOnPath())
+                        enemyToEffect.GetComponent<BasicEnemy>().Kill();
+                    if (ChoosePoint(curSpot).LoopPath())
+                    {
+                        curSpot = ChoosePoint(curSpot).GetPathToLoopTo();
+                    }
+                    else
+                        curSpot++;
+                    startLocation = new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y);
+                }
+                else if (enemyToEffect.transform.position.y > ChoosePoint(curSpot).GetPoint().y)
+                {
+                    enemyToEffect.transform.Translate(new Vector3(0,.1f * ChoosePoint(curSpot).GetSpeed() * 50, 0));
+                    if (enemyToEffect.transform.position.y <= ChoosePoint(curSpot).GetPoint().y)
+                        enemyToEffect.transform.position = new Vector3(ChoosePoint(curSpot).GetPoint().x, ChoosePoint(curSpot).GetPoint().y, enemyToEffect.transform.position.z);
+                }else if(enemyToEffect.transform.position.y < ChoosePoint(curSpot).GetPoint().y)
+                {
+                    enemyToEffect.transform.Translate(new Vector3(0, -.1f * ChoosePoint(curSpot).GetSpeed() * 50, 0));
+                    if (enemyToEffect.transform.position.y >= ChoosePoint(curSpot).GetPoint().y)
+                        enemyToEffect.transform.position = new Vector3(ChoosePoint(curSpot).GetPoint().x, ChoosePoint(curSpot).GetPoint().y, enemyToEffect.transform.position.z);
+                }
+            }
             //checks if the enemy's x is greater than or equal to the path to go to, because it needs to know to either add or subtract the x value
             //as these two nests are nearly identical, I am only going to comment this one
-            if (startLocation.x >= ChoosePoint(curSpot).GetPoint().x)
+            else if (startLocation.x >= ChoosePoint(curSpot).GetPoint().x)
             {
                 //checks if the enemy is on the point of the path
                 if (new Vector2(enemyToEffect.transform.position.x, enemyToEffect.transform.position.y) == ChoosePoint(curSpot).GetPoint())

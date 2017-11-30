@@ -10,6 +10,8 @@ public class PathLocation : MonoBehaviour {
     //speed of the enemy on the path
     [SerializeField, Range(0f, 10.0f)]
     float speedToPath = 1;
+    [SerializeField]
+    bool goStraight;
     //if true, the enemy dies upon reaching the path; if true, the enemy fires his gun while getting to the path
     [SerializeField]
     bool killOnGettingToPath = false, fireWhileGettingToPath;
@@ -57,5 +59,9 @@ public class PathLocation : MonoBehaviour {
     public int GetPathToLoopTo()
     {
         return pathToLoopTo;
+    }
+    public bool GetGoStraight()
+    {
+        return goStraight;
     }
 }
