@@ -45,7 +45,7 @@ public class Stage1Tentacles : MonoBehaviour {
     {
         if (collision.collider.tag.Equals("Player") && justRespawned)
         {
-            GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>().DamageHealth(2f);
+            GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>().DamageHealth(10f);
             justRespawned = false;
         }
     }
