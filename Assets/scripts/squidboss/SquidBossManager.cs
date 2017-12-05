@@ -4,30 +4,54 @@ using UnityEngine;
 
 public class SquidBossManager : MonoBehaviour {
     [SerializeField]
-    GameObject[] stage1Objs;
+    GameObject[] stage1stuff;
     [SerializeField]
-    GameObject[] stage2Objs;
+    GameObject[] stage2stuff;
     [SerializeField]
-    GameObject[] stage3Objs;
+    GameObject[] stage3stuff;
     [SerializeField]
     float timeUntilStage2;
     bool changeStage = false;
     bool startChangeStage = true;
-	
-	// Update is called once per frame
-	void Update () {
-        if (timeUntilStage2 <= 0)
+    [SerializeField]
+    bool debugStage2 = false;
+    // Update is called once per frame
+    private void Start()
+    {
+        if (!debugStage2)
+            CreateStage1();
+    }
+    void Update () {
+        if (timeUntilStage2 <= 0&&!debugStage2)
         {
             DestroyStage1();
         }
         else
             timeUntilStage2 -= Time.deltaTime;
+        if (debugStage2)
+            CreateStage2();
     }
     void DestroyStage1()
     {
-        foreach (GameObject obj in stage1Objs)
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("STAGE1"))
             Destroy(obj);
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Pathfinder"))
             Destroy(obj);
+        Destroy(GameObject.FindGameObjectWithTag("TentacleManager"));
+    }
+    void CreateStage1()
+    {
+        foreach (GameObject obj in stage1stuff)
+            Instantiate(obj);
+    }
+    void CreateStage2()
+    {
+        foreach (GameObject obj in stage2stuff)
+            Instantiate(obj);
+    }
+    void CreateStage3()
+    {
+        foreach (GameObject obj in stage3stuff)
+            Instantiate(obj);
     }
 }
