@@ -16,16 +16,15 @@ public class Stage2Tentacles : MonoBehaviour {
 	void Update () {
         if(transform.position.y > playerTransform.position.y && transform.position.y-baseSpeed > playerTransform.position.y)
         {
-            if(speed >= -baseSpeed)
+            if (!(speed <= -baseSpeed))
                 speed -= .1f;
         }else if(transform.position.y < playerTransform.position.y && transform.position.y + baseSpeed < playerTransform.position.y)
         {
-            if (speed <= baseSpeed)
+            if (!(speed >= baseSpeed))
                 speed += .1f;
-        }else if(transform.position.y == playerTransform.position.y)
-        {
-            speed = 0;
         }
+        if (transform.position.y <= baseSpeed + playerTransform.position.y && transform.position.y >= playerTransform.position.y - baseSpeed)
+            speed /= 1.25f;
         transform.Translate(0, speed, 0);
     }
 }
