@@ -12,9 +12,16 @@ public class Stage2Tentacles : MonoBehaviour {
     int timeUntilAttack = 1;
     float attackTimer = 0;
     bool firedOnce = false;
+    bool doAttack = false;
+    float attackTime = 0;
+    [SerializeField]
+    bool leftSide = false;
+    float xOrigin;
+    int timesToPass = 10;
     // Use this for initialization
     void Start () {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        xOrigin = transform.position.x;
     }
 	
 	// Update is called once per frame
@@ -41,20 +48,66 @@ public class Stage2Tentacles : MonoBehaviour {
         {
             firedOnce = true;
             debugTimesAttacked++;
-            Debug.Log("attacked for the " + debugTimesAttacked + " time.");
-            DoAttack();
+            Debug.Log("attacked " + debugTimesAttacked + " times.");
+            doAttack = true;
         }
         else
             attackTimer += Time.deltaTime;
-    }
-    void DoAttack()
-    {
-        float i = 0;
-        while(i<=10)
+
+        if (doAttack)
         {
-            i += Time.deltaTime;
+            if (attackTime <= 1)
+            {
+                attackTime += Time.deltaTime;
+                if (attackTime < .5f)
+                {
+                    if (leftSide)
+                    {
+                        transform.Translate(-2, 0, 0);
+                    }
+                    else
+                        transform.Translate(2, 0, 0);
+                }else if(attackTime < 1)
+                {
+                    if (leftSide)
+                    {
+                        transform.Translate(13.25f, 0, 0);
+                    }
+                    else
+                        transform.Translate(-13.25f, 0, 0);
+                }
+            }
+            else if (timesToPass > 0)
+            {
+                float distanceToGo = 0;
+                if (leftSide)
+                {
+                    distanceToGo = (transform.position.x - xOrigin)/timesToPass;
+                    transform.Translate(-distanceToGo, 0, 0);
+                    timesToPass--;
+                }
+                else
+                {
+                    distanceToGo = (xOrigin - transform.position.x) / timesToPass;
+                    transform.Translate(distanceToGo, 0, 0);
+                    timesToPass--;
+                }
+            }
+            else
+            {
+                timesToPass = 10;
+                firedOnce = false;
+                doAttack = false;
+                attackTime = 0;
+                attackTimer = 0;
+            }
         }
-        firedOnce = false;
-        attackTimer = 0;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag.Equals("Player"))
+        {
+            GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>().DamageHealth(10f);
+        }
     }
 }

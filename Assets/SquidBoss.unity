@@ -244,7 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 5
-  timeUntilAttack: 5
+  timeUntilAttack: 2
+  leftSide: 0
 --- !u!1 &130332348
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 5
-  timeUntilAttack: 5
+  timeUntilAttack: 2
+  leftSide: 1
 --- !u!1001 &1279831241
 Prefab:
   m_ObjectHideFlags: 0
