@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         //the movement will slow when holding shift.
         //adding speed*axis*.5f to the specific point
         if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))

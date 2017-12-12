@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour {
             collision.collider.gameObject.GetComponent<BasicEnemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
-        if(collision.collider.tag == "STAGE1" || collision.collider.tag == "STAGE2")
+        if(collision.collider.tag == "STAGE1" || collision.collider.tag == "STAGE2" || collision.collider.tag == "tentStage2")
         {
             Destroy(gameObject);
         }
