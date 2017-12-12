@@ -15,6 +15,7 @@ public class SquidBossManager : MonoBehaviour {
     bool startChangeStage = true;
     [SerializeField]
     bool debugStage2 = false;
+    bool onlyOncePls = true;
     // Update is called once per frame
     private void Start()
     {
@@ -22,14 +23,19 @@ public class SquidBossManager : MonoBehaviour {
             CreateStage1();
     }
     void Update () {
-        if (timeUntilStage2 <= 0&&!debugStage2)
+        if (timeUntilStage2 <= 0&&!debugStage2 && onlyOncePls)
         {
             DestroyStage1();
+            CreateStage2();
+            onlyOncePls = false;
         }
         else
             timeUntilStage2 -= Time.deltaTime;
-        if (debugStage2)
+        if (debugStage2 && onlyOncePls)
+        {
             CreateStage2();
+            onlyOncePls = false;
+        }
     }
     void DestroyStage1()
     {

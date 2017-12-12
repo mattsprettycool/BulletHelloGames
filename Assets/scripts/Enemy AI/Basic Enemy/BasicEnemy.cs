@@ -46,4 +46,9 @@ public class BasicEnemy : MonoBehaviour {
             Destroy(obj.gameObject);
         Destroy(gameObject);
     }
+
+    public float GetHealth()
+    {
+        return health;
+    }
 }

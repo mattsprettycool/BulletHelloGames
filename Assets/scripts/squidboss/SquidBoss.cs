@@ -15,7 +15,7 @@ public class SquidBoss : MonoBehaviour {
     GameObject pointer;
 	// Use this for initialization
 	void Start () {
-		
+        pointer = GameObject.FindGameObjectWithTag("pointer");
 	}
 	
 	// Update is called once per frame
@@ -35,13 +35,21 @@ public class SquidBoss : MonoBehaviour {
             var myInst =  Instantiate(bullet, transform);
             myInst.transform.parent = null;
         }
-        if(transform.position != pointer.transform.position)
+        if (transform.position != pointer.transform.position)
         {
-            if(pointer.transform.position.x > transform.position.x)
+            if (pointer.transform.position.x > transform.position.x)
             {
                 transform.Translate(4, 0, 0);
             }else
                 transform.Translate(-4, 0, 0);
+        }
+        if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= 3)
+        {
+            isStage2 = false;
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("tentStage2"))
+            {
+                obj.GetComponent<Stage2Tentacles>().SetStage(false);
+            }
         }
 	}
     public void SetStage(bool isStage2Bool)

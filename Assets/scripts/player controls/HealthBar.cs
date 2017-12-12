@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour {
         }
         if (endGame)
         {
-            SceneManager.LoadScene("End Game", LoadSceneMode.Additive);
+            SceneManager.LoadScene("End Game", LoadSceneMode.Single);
         }
     }
 }
