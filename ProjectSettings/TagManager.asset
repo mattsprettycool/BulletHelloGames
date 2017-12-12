@@ -12,6 +12,8 @@ TagManager:
   - TentacleManager
   - Pathfinder
   - STAGE1
+  - Boss
+  - STAGE2
   layers:
   - Default
   - TransparentFX

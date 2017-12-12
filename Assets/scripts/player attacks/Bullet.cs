@@ -23,11 +23,16 @@ public class Bullet : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //destroys the bullet and damages enemy health on enemy collision
-        if (collision.collider.tag == "enemy")
+        if (collision.collider.tag == "enemy"|| collision.collider.tag == "Boss")
         {
             collision.collider.gameObject.GetComponent<BasicEnemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        if(collision.collider.tag == "STAGE1" || collision.collider.tag == "STAGE2")
+        {
+            Destroy(gameObject);
+        }
+        
     }
     //sends the bullet's damages to other classes.
     public float SendDamage()

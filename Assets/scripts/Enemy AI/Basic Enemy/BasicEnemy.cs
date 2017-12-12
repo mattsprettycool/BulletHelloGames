@@ -4,11 +4,13 @@ using UnityEngine;
 //Author: Matt Braden
 public class BasicEnemy : MonoBehaviour {
     //stores the health as a decimal value; .1 = 100%
-    [SerializeField, Range(0.0f, 1f)]
+    [SerializeField, Range(0.0f, 100f)]
     float health = .1f;
     //This is the damage that the enemy deals on collision
     [SerializeField]
     float damage = 10;
+    [SerializeField]
+    bool isBoss = false;
 	// Use this for initialization
 	void Start () {
 	}
@@ -31,7 +33,8 @@ public class BasicEnemy : MonoBehaviour {
         if (collision.collider.tag == "Player")
         {
             collision.collider.gameObject.GetComponent<PlayerHealth>().DamageHealth(damage);
-            Kill();
+            if(!isBoss)
+                Kill();
         }
     }
     //kills the enemy and all it's childeren and parents. not as morbid as it sounds, but whatever floats your boat is fine.
