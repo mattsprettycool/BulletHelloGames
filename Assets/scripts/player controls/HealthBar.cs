@@ -26,5 +26,9 @@ public class HealthBar : MonoBehaviour {
     public void DamageHealth(float damageTaken)
     {
         health = ((health * 100) - damageTaken) / 100;
+        if(health <= 0)
+        {
+            
+        }
     }
 }
