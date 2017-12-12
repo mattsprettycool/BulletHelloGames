@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Author: Matt Braden
 public class HealthBar : MonoBehaviour {
     //the player's health
@@ -25,10 +26,15 @@ public class HealthBar : MonoBehaviour {
     //damages the health
     public void DamageHealth(float damageTaken)
     {
+        bool endGame = false;
         health = ((health * 100) - damageTaken) / 100;
         if(health <= 0)
         {
-            
+            endGame = true;
+        }
+        if (endGame)
+        {
+            SceneManager.LoadScene("End Game", LoadSceneMode.Additive);
         }
     }
 }
