@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/SquidBoss.unity
+    guid: 4e9bfe8e7ca497c40a154c68f295ba1e
+  - enabled: 1
     path: Assets/End Game.unity
     guid: 6bf5272a2b81d1c41afa6217b715fb5e
