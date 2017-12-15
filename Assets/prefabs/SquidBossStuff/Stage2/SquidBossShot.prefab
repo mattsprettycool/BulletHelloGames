@@ -339,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 1643548276796616}
   m_LocalRotation: {x: 0, y: -0, z: 0.3826836, w: -0.92387944}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 15
@@ -352,7 +352,7 @@ Transform:
   m_GameObject: {fileID: 1832783189399906}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 12
@@ -365,7 +365,7 @@ Transform:
   m_GameObject: {fileID: 1949643556705602}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 10
@@ -378,7 +378,7 @@ Transform:
   m_GameObject: {fileID: 1247458535213406}
   m_LocalRotation: {x: -0, y: -0, z: -0.22593012, w: 0.97414356}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 3
@@ -391,7 +391,7 @@ Transform:
   m_GameObject: {fileID: 1543305652454454}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 9
@@ -404,7 +404,7 @@ Transform:
   m_GameObject: {fileID: 1735756505111906}
   m_LocalRotation: {x: -0, y: -0, z: 0.16405644, w: 0.98645097}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 4
@@ -417,7 +417,7 @@ Transform:
   m_GameObject: {fileID: 1446655119063528}
   m_LocalRotation: {x: -0, y: -0, z: 0.8135314, w: 0.58152103}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 5
@@ -430,7 +430,7 @@ Transform:
   m_GameObject: {fileID: 1004865931922232}
   m_LocalRotation: {x: -0, y: -0, z: 0.52906746, w: 0.8485798}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 2
@@ -443,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 1227071630313028}
   m_LocalRotation: {x: 0, y: -0, z: 0.9238796, w: -0.38268325}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 14
@@ -456,7 +456,7 @@ Transform:
   m_GameObject: {fileID: 1838248373585566}
   m_LocalRotation: {x: -0, y: -0, z: 0.986451, w: -0.16405624}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 6
@@ -469,7 +469,7 @@ Transform:
   m_GameObject: {fileID: 1413271681010890}
   m_LocalRotation: {x: -0, y: -0, z: 0.58152133, w: -0.81353116}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 7
@@ -482,7 +482,7 @@ Transform:
   m_GameObject: {fileID: 1829572747646204}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 8
@@ -524,7 +524,7 @@ Transform:
   m_GameObject: {fileID: 1249735213204098}
   m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 13
@@ -537,7 +537,7 @@ Transform:
   m_GameObject: {fileID: 1771059945974034}
   m_LocalRotation: {x: -0, y: -0, z: 0.8485798, w: -0.52906746}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 1
@@ -550,7 +550,7 @@ Transform:
   m_GameObject: {fileID: 1211187487843010}
   m_LocalRotation: {x: -0, y: -0, z: 0.97414356, w: 0.22593012}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 0
@@ -563,7 +563,7 @@ Transform:
   m_GameObject: {fileID: 1859763348126340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4601561062972982}
   m_RootOrder: 11
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114134078204487628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1313,7 +1313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114176709925072156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114215280449879430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114230297661263716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114231565691205296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114368457278179654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114378499573731352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114428544778797584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114481160426793902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1417,7 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114493832174541336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114565219263592794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114629684459723448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114890465551987370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114913875602022788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &114945352303332732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 0
+  damage: 15
 --- !u!212 &212008817409034462
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -24,6 +24,8 @@ public class SquidBoss : MonoBehaviour {
         {
             fireRate /= 2;
             stopUpdate = true;
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetTrigger("red");
         }
         if (currentFire < fireRate)
         {
@@ -43,7 +45,7 @@ public class SquidBoss : MonoBehaviour {
             }else
                 transform.Translate(-4, 0, 0);
         }
-        if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= 3)
+        if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= gameObject.GetComponent<BasicEnemy>().GetBaseHealth()/3)
         {
             isStage2 = false;
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("tentStage2"))

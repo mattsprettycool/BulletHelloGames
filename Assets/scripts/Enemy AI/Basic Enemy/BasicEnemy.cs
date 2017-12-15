@@ -11,9 +11,11 @@ public class BasicEnemy : MonoBehaviour {
     float damage = 10;
     [SerializeField]
     bool isBoss = false;
+    float baseHealth;
 	// Use this for initialization
 	void Start () {
-	}
+        baseHealth = health;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -50,5 +52,10 @@ public class BasicEnemy : MonoBehaviour {
     public float GetHealth()
     {
         return health;
+    }
+
+    public float GetBaseHealth()
+    {
+        return baseHealth;
     }
 }

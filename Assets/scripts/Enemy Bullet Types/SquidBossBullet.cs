@@ -27,7 +27,7 @@ public class SquidBossBullet : MonoBehaviour {
             gameObject.transform.Translate(new Vector3(0, Mathf.Round(speed), 0));
         }
         else
-            transform.RotateAround(transform.parent.position, new Vector3(0, 0, .5f), 1);
+            transform.RotateAround(transform.parent.position, new Vector3(0, 0, .25f), 1);
         if (yVal < Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y) Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)

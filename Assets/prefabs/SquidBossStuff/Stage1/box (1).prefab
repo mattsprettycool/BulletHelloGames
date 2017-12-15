@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOnLeft: 0
+  damage: 25
 --- !u!212 &212690976106029204
 SpriteRenderer:
   m_ObjectHideFlags: 1

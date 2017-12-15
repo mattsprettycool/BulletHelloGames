@@ -9,6 +9,8 @@ public class Stage1Tentacles : MonoBehaviour {
     bool isOnLeft;
     Vector3 defaultPos;
     bool justRespawned = true;
+    [SerializeField]
+    float damage = 10f;
 	// Use this for initialization
 	void Start () {
         if (isOnLeft)
@@ -45,7 +47,7 @@ public class Stage1Tentacles : MonoBehaviour {
     {
         if (collision.collider.tag.Equals("Player") && justRespawned)
         {
-            GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>().DamageHealth(10f);
+            GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>().DamageHealth(damage);
             justRespawned = false;
         }
     }
