@@ -120,7 +120,7 @@ public class Stage2Tentacles : MonoBehaviour {
     {
         if (collision.collider.tag.Equals("Player"))
         {
-            GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>().DamageHealth(15f);
+            collision.collider.GetComponent<PlayerHealth>().DamageHealth(15f);
         }
     }
     public void SetStage(bool isStage2Bool)
