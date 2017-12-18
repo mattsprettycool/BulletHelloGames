@@ -51,13 +51,13 @@ public class Stage2Tentacles : MonoBehaviour {
         }
         else
             speed = 0;
-        if(transform.position.y < -(Camera.main.pixelHeight/2))
+        if(transform.position.y < Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y)
         {
-            transform.position = new Vector3(transform.position.x, -(Camera.main.pixelHeight / 2), transform.position.z);
+            transform.position = new Vector3(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y, transform.position.z);
         }
-        if (transform.position.y > (Camera.main.pixelHeight / 2))
+        if (transform.position.y > Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0)).y)
         {
-            transform.position = new Vector3(transform.position.x, (Camera.main.pixelHeight / 2), transform.position.z);
+            transform.position = new Vector3(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0)).y, transform.position.z);
         }
         if (attackTimer >= timeUntilAttack && !firedOnce)
         {

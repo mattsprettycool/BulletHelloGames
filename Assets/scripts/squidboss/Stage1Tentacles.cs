@@ -11,13 +11,13 @@ public class Stage1Tentacles : MonoBehaviour {
     bool justRespawned = true;
     [SerializeField]
     float damage = 10f;
-    float distanceForLeft = 0;
+    //float distanceForLeft = 0;
 	// Use this for initialization
 	void Start () {
-        if (isOnLeft)
-        {
-            distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y;
-        }
+        //if (isOnLeft)
+        //{
+            //distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y;
+        //}
         if (isOnLeft)
         {
             gameObject.transform.localScale = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x + 500 + Random.Range(0, 500), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
@@ -37,19 +37,19 @@ public class Stage1Tentacles : MonoBehaviour {
 	void Update () {
             speed = tm.GetSpeed();
             gameObject.transform.Translate(new Vector3(0, speed, 0));
-            if (gameObject.transform.position.y <= Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y)
+            if (gameObject.transform.position.y <= Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y*2)
             {
-                gameObject.transform.localScale = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x + 500 + Random.Range(0, 500), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                gameObject.transform.localScale = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x + 500 + Random.Range(0, 300), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0)).y, gameObject.transform.position.z);
                 justRespawned = true;
             }
-        if (isOnLeft&&(distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y) > distanceForLeft)
-        {
-            transform.position = new Vector3(transform.position.x, GameObject.FindGameObjectWithTag("rightTent").transform.position.y + distanceForLeft, transform.position.z);
-        }else if(isOnLeft && (distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y) < distanceForLeft)
-        {
-            transform.position = new Vector3(transform.position.x, GameObject.FindGameObjectWithTag("rightTent").transform.position.y - distanceForLeft, transform.position.z);
-        }
+        //if (isOnLeft&&(distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y) > distanceForLeft)
+        //{
+            //transform.position = new Vector3(transform.position.x, GameObject.FindGameObjectWithTag("rightTent").transform.position.y + distanceForLeft, transform.position.z);
+        //}else if(isOnLeft && (distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y) < distanceForLeft)
+        //{
+            //transform.position = new Vector3(transform.position.x, GameObject.FindGameObjectWithTag("rightTent").transform.position.y - distanceForLeft, transform.position.z);
+        //}
 	}
     public float GetDefPosY()
     {
