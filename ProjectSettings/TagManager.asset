@@ -16,6 +16,7 @@ TagManager:
   - STAGE2
   - pointer
   - tentStage2
+  - rightTent
   layers:
   - Default
   - TransparentFX

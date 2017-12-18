@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50337748078907024}
   m_Layer: 0
   m_Name: box (1)
-  m_TagString: STAGE1
+  m_TagString: rightTent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
