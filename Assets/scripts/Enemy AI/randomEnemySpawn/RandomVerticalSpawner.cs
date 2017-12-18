@@ -16,7 +16,7 @@ public class RandomVerticalSpawner : MonoBehaviour {
     void Update () {
         if (curTime <= 0)
         {
-            Vector3 randomPoint = new Vector3(Random.Range(-Camera.main.pixelWidth/2, Camera.main.pixelWidth/2), transform.position.y, transform.position.z);
+            Vector3 randomPoint = new Vector3(Random.Range(Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x), transform.position.y, transform.position.z);
             Instantiate(objToSpawn, randomPoint, objToSpawn.transform.rotation);
             curTime = intervalBetweenSpawns;
         }
