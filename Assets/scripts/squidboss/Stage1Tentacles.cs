@@ -11,17 +11,22 @@ public class Stage1Tentacles : MonoBehaviour {
     bool justRespawned = true;
     [SerializeField]
     float damage = 10f;
+    float distanceForLeft = 0;
 	// Use this for initialization
 	void Start () {
         if (isOnLeft)
         {
-            gameObject.transform.localScale = new Vector3(Camera.main.pixelWidth, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-            gameObject.transform.position = new Vector3(-1 * (Camera.main.pixelWidth / 2), gameObject.transform.position.y, gameObject.transform.position.z);
+            distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y;
+        }
+        if (isOnLeft)
+        {
+            gameObject.transform.localScale = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x + 500 + Random.Range(0, 500), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            gameObject.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).x, gameObject.transform.position.y, gameObject.transform.position.z);
         }
         else
         {
-            gameObject.transform.localScale = new Vector3(Camera.main.pixelWidth, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-            gameObject.transform.position = new Vector3((Camera.main.pixelWidth / 2), gameObject.transform.position.y, gameObject.transform.position.z);
+            gameObject.transform.localScale = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x + 500 + Random.Range(0, 500), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            gameObject.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x, gameObject.transform.position.y, gameObject.transform.position.z);
         }
         tm = GameObject.FindGameObjectWithTag("TentacleManager").GetComponent<TentacleManager>();
         speed = tm.GetSpeed();
@@ -30,13 +35,20 @@ public class Stage1Tentacles : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        speed = tm.GetSpeed();
-        gameObject.transform.Translate(new Vector3(0, speed, 0));
-        if (gameObject.transform.position.y <= -Camera.main.pixelHeight/2)
+            speed = tm.GetSpeed();
+            gameObject.transform.Translate(new Vector3(0, speed, 0));
+            if (gameObject.transform.position.y <= Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y)
+            {
+                gameObject.transform.localScale = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, 0)).x + 500 + Random.Range(0, 500), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, 0)).y, gameObject.transform.position.z);
+                justRespawned = true;
+            }
+        if (isOnLeft&&(distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y) > distanceForLeft)
         {
-            gameObject.transform.localScale = new Vector3(Camera.main.pixelWidth + Random.Range(0, 200), gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, Camera.main.pixelHeight, gameObject.transform.position.z);
-            justRespawned = true;
+            transform.position = new Vector3(transform.position.x, GameObject.FindGameObjectWithTag("rightTent").transform.position.y + distanceForLeft, transform.position.z);
+        }else if(isOnLeft && (distanceForLeft = transform.position.y - GameObject.FindGameObjectWithTag("rightTent").transform.position.y) < distanceForLeft)
+        {
+            transform.position = new Vector3(transform.position.x, GameObject.FindGameObjectWithTag("rightTent").transform.position.y - distanceForLeft, transform.position.z);
         }
 	}
     public float GetDefPosY()
