@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SquidBoss : MonoBehaviour {
     [SerializeField]
@@ -20,6 +21,8 @@ public class SquidBoss : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(gameObject.GetComponent<BasicEnemy>().GetHealth()<=0)
+            SceneManager.LoadScene("YouWin", LoadSceneMode.Single);
         if (!isStage2&&!stopUpdate)
         {
             fireRate /= 2;
@@ -45,7 +48,7 @@ public class SquidBoss : MonoBehaviour {
             }else
                 transform.Translate(-4, 0, 0);
         }
-        if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= gameObject.GetComponent<BasicEnemy>().GetBaseHealth()/3)
+        if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= gameObject.GetComponent<BasicEnemy>().GetBaseHealth()/2)
         {
             isStage2 = false;
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("tentStage2"))

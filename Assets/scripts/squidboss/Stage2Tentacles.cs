@@ -5,10 +5,10 @@ using UnityEngine;
 public class Stage2Tentacles : MonoBehaviour {
     Transform playerTransform;
     [SerializeField, Range(1,100)]
-    int baseSpeed = 1;
+    float baseSpeed = 1;
     float speed = 0;
     [SerializeField, Range(1, 100)]
-    int timeUntilAttack = 1;
+    float timeUntilAttack = 1;
     float attackTimer = 0;
     bool firedOnce = false;
     bool doAttack = false;
@@ -30,8 +30,8 @@ public class Stage2Tentacles : MonoBehaviour {
 	void Update () {
         if (!isStage2 && !changeStage)
         {
-            baseSpeed *= 2;
-            timeUntilAttack /= 2;
+            baseSpeed *= 1.25f;
+            timeUntilAttack /= 1.25f;
             changeStage = true;
         }
         if(transform.position.y > playerTransform.position.y && transform.position.y-baseSpeed > playerTransform.position.y && (!firedOnce || (firedOnce && !isStage2)))

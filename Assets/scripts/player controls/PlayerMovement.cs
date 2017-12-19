@@ -27,8 +27,8 @@ public class PlayerMovement : MonoBehaviour {
         //adding speed*axis*.5f to the specific point
         if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
         {
-            yPos += (speed * Input.GetAxis("Vertical") * .5f)/1.5f;
-            xPos += (speed * Input.GetAxis("Horizontal") * .5f)/1.5f;
+            yPos += (speed * Input.GetAxis("Vertical") * .5f)/3;
+            xPos += (speed * Input.GetAxis("Horizontal") * .5f)/3;
         }
         else
         {

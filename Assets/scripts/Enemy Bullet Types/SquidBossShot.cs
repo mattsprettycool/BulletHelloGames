@@ -29,7 +29,7 @@ public class SquidBossShot : MonoBehaviour {
             //transform.Rotate(new Vector3(0, 0, 1));
             gameObject.transform.Translate(new Vector3(0, -Mathf.Round(speed), 0));
         }
-        if(transform.position.y <= -(Camera.main.pixelHeight / 2) * 2)
+        if(transform.position.y <= Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y * 2)
         {
             Destroy(gameObject);
         }

@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/End Game.unity
     guid: 6bf5272a2b81d1c41afa6217b715fb5e
+  - enabled: 1
+    path: Assets/YouWin.unity
+    guid: 2b51b1c119b11e943af9ad7c2d6d3471

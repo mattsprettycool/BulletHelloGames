@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1597292355699800, guid: c7204883bfa84c44cb651df0217fad2d, type: 2}
-  fireRate: 5
+  fireRate: 0.04
 --- !u!114 &114698059847143738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1597292355699800, guid: c7204883bfa84c44cb651df0217fad2d, type: 2}
-  fireRate: 5
+  fireRate: 0.01
 --- !u!114 &114774758034483472
 MonoBehaviour:
   m_ObjectHideFlags: 1
