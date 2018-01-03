@@ -14,46 +14,59 @@ public class SquidBoss : MonoBehaviour {
     float currentFire = 0;
     [SerializeField]
     GameObject pointer;
+    Vector3 startpos;
+    bool notAtStart = true;
 	// Use this for initialization
 	void Start () {
         pointer = GameObject.FindGameObjectWithTag("pointer");
+        startpos = transform.position;
+        transform.position = new Vector3(transform.position.x, transform.position.y+500, transform.position.z);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(gameObject.GetComponent<BasicEnemy>().GetHealth()<=0)
-            SceneManager.LoadScene("YouWin", LoadSceneMode.Single);
-        if (!isStage2&&!stopUpdate)
+        if (notAtStart)
         {
-            fireRate /= 2;
-            stopUpdate = true;
-            var animator = gameObject.GetComponent<Animator>();
-            animator.SetTrigger("red");
-        }
-        if (currentFire < fireRate)
+            transform.Translate(0, -5, 0);
+            if (transform.position.y <= startpos.y)
+                notAtStart = false;
+        }else
         {
-            currentFire += Time.deltaTime;
-        }
-        else
-        {
-            currentFire = 0;
-            var myInst =  Instantiate(bullet, transform);
-            myInst.transform.parent = null;
-        }
-        if (transform.position != pointer.transform.position)
-        {
-            if (pointer.transform.position.x > transform.position.x)
+            if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= 0)
+                SceneManager.LoadScene("YouWin", LoadSceneMode.Single);
+            if (!isStage2 && !stopUpdate)
             {
-                transform.Translate(4, 0, 0);
-            }else
-                transform.Translate(-4, 0, 0);
-        }
-        if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= gameObject.GetComponent<BasicEnemy>().GetBaseHealth()/2)
-        {
-            isStage2 = false;
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("tentStage2"))
+                fireRate /= 2;
+                stopUpdate = true;
+                var animator = gameObject.GetComponent<Animator>();
+                animator.SetTrigger("red");
+            }
+            if (currentFire < fireRate)
             {
-                obj.GetComponent<Stage2Tentacles>().SetStage(false);
+                currentFire += Time.deltaTime;
+            }
+            else
+            {
+                currentFire = 0;
+                var myInst = Instantiate(bullet, transform);
+                myInst.transform.parent = null;
+            }
+            if (transform.position != pointer.transform.position)
+            {
+                if (pointer.transform.position.x > transform.position.x)
+                {
+                    transform.Translate(4, 0, 0);
+                }
+                else
+                    transform.Translate(-4, 0, 0);
+            }
+            if (gameObject.GetComponent<BasicEnemy>().GetHealth() <= gameObject.GetComponent<BasicEnemy>().GetBaseHealth() / 2)
+            {
+                isStage2 = false;
+                foreach (GameObject obj in GameObject.FindGameObjectsWithTag("tentStage2"))
+                {
+                    obj.GetComponent<Stage2Tentacles>().SetStage(false);
+                }
             }
         }
 	}
